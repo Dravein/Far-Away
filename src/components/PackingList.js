@@ -31,7 +31,6 @@ export default function PackingList({
     <div className="list">
       <ul>
         {sortedItems.map((item) => (
-          // onDeleteItem App->PackingList->Item útvonalon adjuk át a handleDeleteItem funkciót
           <Item
             item={item}
             key={item.id}

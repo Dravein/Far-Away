@@ -4,28 +4,14 @@ import Form from "./Form";
 import PackingList from "./PackingList";
 import Stats from "./Stats";
 
-// const initialItems = [
-//   { id: 1, description: "Passports", quantity: 2, packed: false },
-//   { id: 2, description: "Socks", quantity: 12, packed: true },
-//   { id: 3, description: "Charger", quantity: 1, packed: false },
-// ];
-
 export default function App() {
-  //<Form> Componentből fölhelyezett State
   const [items, setItems] = useState([]);
 
   function handleAddItems(item) {
-    ////Reactba nem szabad változtatni a meglévő Arrayt (Immutable) ezért így nem jó új Arrayt kell létrehozni.
-    // setItems((items) => items.push(item));
-
-    ////Helyette:
     setItems((items) => [...items, item]);
   }
 
-  //Items listáról tudjunk törölni itemet.
   function handleDeleteItem(id) {
-    // console.log("Kiírja ha csak a függvényt adom át az Item button onclickjébe");
-    // Új Arrayal tér vissza. Minden itemmel aminek az ID-je nem a megadott, így töröljük a megadott ID-t.
     console.log(id);
     setItems((items) => items.filter((item) => item.id !== id));
   }
